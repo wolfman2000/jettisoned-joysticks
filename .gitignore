@@ -1,3 +1,28 @@
+# Project related files
+*.codelite/
+*.pbxuser
+*.xcscheme
+*.xccheckout
+*.pdb
+*.sdf
+*.opensdf
+*.suo
+*.exp
+*.ilk
+*.map
+
+# Explorer files
+Thumbs.db
+.DS_Store
+
+# Diff related files
+*.diff
+*.patch
+*_BACKUP_*
+*_BASE_*
+*_LOCAL_*
+*_REMOTE_*
+
 # Compiled Object files
 *.slo
 *.lo
