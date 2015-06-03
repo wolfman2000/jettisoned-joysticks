@@ -5,6 +5,9 @@ project(JettisonedJoysticks)
 # Note: custom setup of the SDL2 variable may be required.
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${JettisonedJoysticks_SOURCE_DIR}/CMake/Modules")
 
+# Set a dedicated output directory.
+set(JJ_BIN_DIR ${JettisonedJoysticks_SOURCE_DIR}/bin)
+
 # Ensure no in-source build.
 # http://stackoverflow.com/q/1208681/445373
 if("${PROJECT_SOURCE_DIR}" STREQUAL "${PROJECT_BINARY_DIR}")
