@@ -11,6 +11,17 @@
 *.ilk
 *.map
 
+# Out of source build directory.
+Build/
+
+# Cmake generated files.
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+*.build
+*.xcodeproj
+cmake_install.cmake
+
 # Explorer files
 Thumbs.db
 .DS_Store
