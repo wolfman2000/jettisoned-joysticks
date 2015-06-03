@@ -11,6 +11,9 @@
 *.ilk
 *.map
 
+# Mac OS X may need the SDL2 framework in another location.
+SDL2.framework
+
 # Out of source build directory.
 Build/
 
