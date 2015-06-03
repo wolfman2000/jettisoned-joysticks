@@ -10,3 +10,4 @@ Then, generate your projects as normal.
 
 Those on Mac OS X may have to manually compile the SDL2 framework until a later version than 2.0.3 is released due to code signing issues.
 
+Those on Windows using Visual Studio are advised to set the SDL2 environment variable to where SDL2 is installed.
