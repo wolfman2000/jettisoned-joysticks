@@ -1,7 +1,16 @@
 list(APPEND JJ_INCLUDE_DIRS
   ${SDL2_INCLUDE_DIR}
 )
-add_executable(Tester "test.cpp")
+
+list(APPEND JJ_SRC
+  "test.cpp"
+)
+
+list(APPEND JJ_HPP
+  "resource_path.hpp"
+)
+
+add_executable(Tester ${JJ_SRC} ${JJ_HPP})
 
 set_target_properties(Tester PROPERTIES
   RUNTIME_OUTPUT_DIRECTORY "${JJ_BIN_DIR}"

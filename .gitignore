@@ -65,3 +65,8 @@ Thumbs.db
 *.exe
 *.out
 *.app
+
+# Directories that usually hold binary items.
+bin/
+obj/
+
