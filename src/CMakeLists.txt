@@ -2,17 +2,58 @@ list(APPEND JJ_INCLUDE_DIRS
   ${SDL2_INCLUDE_DIR}
 )
 
-list(APPEND JJ_SRC
+list(APPEND GAMELIB_HPP
+  "userState.hpp"
+  "gameState.hpp"
+)
+
+list(APPEND GAMELIB_CPP
+  "gameState.cpp"
+)
+
+add_library(GameLib ${GAMELIB_CPP} ${GAMELIB_HPP})
+
+set_property(TARGET GameLib PROPERTY FOLDER "Internal Libraries")
+
+set_target_properties(GameLib PROPERTIES
+  CXX_STANDARD 14
+  CXX_STANDARD_REQUIRED ON
+)
+
+list(APPEND CL_SRC
+  "clMain.cpp"
+)
+
+add_executable(Jettisoned ${CL_SRC})
+
+list(APPEND Jettisoned_Link_Lib
+  "GameLib"
+)
+
+target_link_libraries(Jettisoned ${Jettisoned_Link_Lib})
+
+set_property(TARGET Jettisoned PROPERTY FOLDER "Executables")
+
+set_target_properties(Jettisoned PROPERTIES
+  CXX_STANDARD 14
+  CXX_STANDARD_REQUIRED ON
+)
+
+list(APPEND TEST_SRC
   "test.cpp"
 )
 
-list(APPEND JJ_HPP
+list(APPEND TEST_HPP
   "resource_path.hpp"
 )
 
-add_executable(Tester ${JJ_SRC} ${JJ_HPP})
+add_executable(Tester ${TEST_SRC} ${TEST_HPP})
+
+set_property(TARGET Tester PROPERTY FOLDER "Executables")
 
 set_target_properties(Tester PROPERTIES
+  CXX_STANDARD 14
+  CXX_STANDARD_REQUIRED ON
   RUNTIME_OUTPUT_DIRECTORY "${JJ_BIN_DIR}"
   RUNTIME_OUTPUT_DIRECTORY_RELEASE "${JJ_BIN_DIR}"
   RUNTIME_OUTPUT_DIRECTORY_DEBUG "${JJ_BIN_DIR}"
